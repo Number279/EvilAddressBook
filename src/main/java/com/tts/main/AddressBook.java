@@ -34,19 +34,27 @@ public class AddressBook {
 
 
     public static void removeEntry(String email){
-        System.out.println("Deleted the following entry:");
-        System.out.println(findEntry(email));
-        entryList.removeIf(entry -> entry.getEmailAddress().equals(email));
+        System.out.println("Attempting to remove..." + email);
+        try{
+            System.out.println(findEntry(email));
+            System.out.println("Removed " + email + " from the Address Book.");
+            entryList.removeIf(entry -> entry.getEmailAddress().equals(email));
+    } catch (Exception e){
+            System.out.println("There was nothing to remove!");
+        } finally {
+            System.out.println("That was unproductive!");
+        }
     }
 
-    public static List<Entry> searchInList(List<Entry> entryList, String userInputSearch) {
+    public static List<Entry> searchInList(String userInputSearch) {
+        boolean ans = false;
         List<Entry> results = new ArrayList<>();
         for (Entry entry : entryList) {
             if (entry.toString().contains(userInputSearch)) {
                 results.add(entry);
+                ans = true;
             }
         }
-            boolean ans = results.toString().contains(userInputSearch);
             if(ans){
                 System.out.println(results);
         } else {

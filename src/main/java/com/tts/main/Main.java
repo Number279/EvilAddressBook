@@ -36,7 +36,7 @@ public class Main {
                     break;
                 case "2":
                     System.out.println("THIS IS HIGHLY INADVISABLE");
-                    System.out.println("Enter the poor email address that will never be heard from again.");
+                    System.out.println("Enter the email address of the poor person you don't think is worthy of being in your address book.  Sad.");
                     String deleteEmail = sc.next();
                     AddressBook.removeEntry(deleteEmail);
                     x = 6;
@@ -44,7 +44,7 @@ public class Main {
                 case "3":
                     System.out.println("Enter information pertaining to the merchan... user you would like to find.");
                     String userInputSearch = sc.next();
-                    List<Entry> entryList = AddressBook.searchInList(AddressBook.getEntryList(), userInputSearch);
+                    List<Entry> entryList = AddressBook.searchInList(userInputSearch);
                     x = 6;
                     break;
                 case "4":
