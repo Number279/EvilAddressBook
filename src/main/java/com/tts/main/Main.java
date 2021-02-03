@@ -23,7 +23,7 @@ public class Main {
                 case "1":
                     System.out.println("Please enter the commodity's first name.");
                     String firstName = sc.next();
-                    System.out.println("Please enter the income source's second name.");
+                    System.out.println("Please enter the income source's last name.");
                     String secondName = sc.next();
                     System.out.println("Please enter the phone number that our ad partners can call.");
                     String phoneNumber = sc.next();
