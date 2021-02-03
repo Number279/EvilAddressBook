@@ -15,8 +15,8 @@ public class Main {
         System.out.println("of your personal information.");
         int x = 5;
         while (x > 4) {
-            System.out.println("Please select a number corresponding the option you would like below.");
-            System.out.println(" 1. Add Entry \n 2. Remove Entry (NOT RECOMMENDED) \n 3. Search for Entry \n 4. Print Entries \n 5. Delete Address Book (HIGHLY UNSTABLE, MAY DESTROY YOUR COMPUTER) \n 6. Quit the Program.");
+            System.out.println("\n Please select a number corresponding the option you would like below.");
+            System.out.println("\n 1. Add Entry \n 2. Remove Entry (NOT RECOMMENDED) \n 3. Search for Entry \n 4. Print Entries \n 5. Delete Address Book (HIGHLY UNSTABLE, MAY DESTROY YOUR COMPUTER) \n 6. Quit the Program.");
             String userInput = sc.next();
 
             switch (userInput) {

@@ -19,19 +19,19 @@ public class AddressBook {
 
     //add method
 
-    public static void addEntry(Entry entry){
-//        HashSet<Entry> set = new HashSet<>();
-//        for(Entry i : entryList){
-//            if(!set.contains(i)){
-                entryList.add(entry);
-//                set.add(i);
-//            }
-//            if(set.contains(i)){
-//                System.out.println("This information has already been sold.");
-//            }
-//        }
-        System.out.println("Added" + entry);
+    public static void addEntry(Entry entry) {
+        var isNotUnique = entryList.stream()
+                .anyMatch(e -> e.getEmailAddress().equals(entry.getEmailAddress()));
+
+        if (isNotUnique) {
+            System.out.print("We've already sold that email address! The ad guys won't buy it twice!");
+        }  else {
+            entryList.add(entry);
+            System.out.println(entry);
+            System.out.print("Thanks for the donati... addition to the address book!");
+        }
     }
+
 
     public static void removeEntry(String email){
         System.out.println("Deleted the following entry:");
@@ -39,18 +39,21 @@ public class AddressBook {
         entryList.removeIf(entry -> entry.getEmailAddress().equals(email));
     }
 
-    public static List<Entry> searchInList(List<Entry> entryList, String userInputSearch){
+    public static List<Entry> searchInList(List<Entry> entryList, String userInputSearch) {
         List<Entry> results = new ArrayList<>();
         for (Entry entry : entryList) {
-            if(entry.toString().contains(userInputSearch)) {
+            if (entry.toString().contains(userInputSearch)) {
                 results.add(entry);
-                System.out.println(results);
-            } else {
-                System.out.println("Your search did not yield profitable results.");
             }
         }
-        return results;
-    }
+            boolean ans = results.toString().contains(userInputSearch);
+            if(ans){
+                System.out.println(results);
+        } else {
+                System.out.println("We haven't made money on that yet!  Add more data for free!!");
+            }
+            return null;
+        }
 
     public static Entry findEntry (String email) {
         return entryList.stream()
